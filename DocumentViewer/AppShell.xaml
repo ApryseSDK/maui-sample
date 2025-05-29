@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="DocumentViewer.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:DocumentViewer.Views"
+       Shell.FlyoutBehavior="Disabled"
+       Title="MAUI Document Viewer">
+
+  <ShellContent Title="Document Viewer"
+                ContentTemplate="{DataTemplate views:DocumentViewerPage}"
+                Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png'}"/>
+
+</Shell>
