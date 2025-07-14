@@ -8,6 +8,7 @@ using DocumentViewer.Controls;
 using Color = Android.Graphics.Color;
 using Uri = Android.Net.Uri;
 using pdftron.PDF.Controls;
+using pdftron.PDF.Model;
 
 namespace DocumentViewer.Platforms.Android
 {
@@ -90,13 +91,32 @@ namespace DocumentViewer.Platforms.Android
 
             ViewerConfig? GetConfig()
             {
-                var toolmanagerBuilder = ToolManagerBuilder.From()?.SetAutoSelect(true);
+                var annotStylePoly = new pdftron.PDF.Model.AnnotStyleProperty(pdftron.PDF.Model.AnnotStyle.CustomAnnotTypePerimeterMeasure)
+                    .SetMeasurementPrecisions(new AnnotStyleProperty.MeasurementPrecision[]{
+                        AnnotStyleProperty.MeasurementPrecision.Two,
+                        AnnotStyleProperty.MeasurementPrecision.Three,
+                    })
+                    .SetMeasurementFractionPrecisions(new AnnotStyleProperty.MeasurementFractionPrecision[]{
+                        AnnotStyleProperty.MeasurementFractionPrecision.Two,
+                        AnnotStyleProperty.MeasurementFractionPrecision.Three,
+                        AnnotStyleProperty.MeasurementFractionPrecision.Four,
+                        AnnotStyleProperty.MeasurementFractionPrecision.Five,
+                    })
+                    .SetMeasurementBaseUnits(new AnnotStyleProperty.MeasurementBaseUnit[]{
+                        AnnotStyleProperty.MeasurementBaseUnit.In,
+                    })
+                    .SetMeasurementTranslateUnits(new AnnotStyleProperty.MeasurementTranslateUnit[]{
+                        AnnotStyleProperty.MeasurementTranslateUnit.M,
+                        AnnotStyleProperty.MeasurementTranslateUnit.FractionIn,
+                        AnnotStyleProperty.MeasurementTranslateUnit.FractionFtIn,
+                    });
+                var toolManagerBuilder = ToolManagerBuilder.From().AddAnnotStyleProperty(annotStylePoly);
                 var builder = new ViewerConfig.Builder();
                 var config = builder
                     ?.MultiTabEnabled(true)
                     ?.FullscreenModeEnabled(false)
                     ?.UseSupportActionBar(false)
-                    ?.ToolManagerBuilder(toolmanagerBuilder)
+                    ?.ToolManagerBuilder(toolManagerBuilder)
                     ?.SaveCopyExportPath(this.Context?.FilesDir?.AbsolutePath)
                     ?.Build();
                 return config;
