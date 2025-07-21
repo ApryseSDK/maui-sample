@@ -8,6 +8,6 @@
 
   <ShellContent Title="Document Viewer"
                 ContentTemplate="{DataTemplate views:DocumentViewerPage}"
-                Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png'}"/>
+                Icon="{OnPlatform 'dotnet_bot.png'}"/>
 
 </Shell>
