@@ -255,12 +255,21 @@ The trial of the Apryse Mobile SDK does not require a trial key. A commercial li
 
 Open the solution in an IDE like [JetBrains Rider](https://www.jetbrains.com/help/rider/MAUI.html#run_debug) or [Microsoft Visual Studio](https://learn.microsoft.com/en-us/dotnet/maui/android/device/setup?view=net-maui-9.0) then build, deploy, and run the project to an Android device or emulator.
 
+
 ### iOS
 
 If using an IDE supported on Mac OS (e.g. [JetBrains Rider](https://www.jetbrains.com/help/rider/MAUI.html#run_debug)), open the solution then build, deploy, and run the project to the Xcode iOS simulator or a connected iOS device.
 
 Otherwise, if the solution is opened on an IDE running on Windows, a Mac machine needs to be paired to the IDE and an active Apple developer account needs to generate a provisioning profile in order to build, deploy, and run the project to an iOS device connected to the Mac machine or remotely to the Xcode iOS simulator.
 
+> **Note**
+>
+> We are currently using the `arm64` iOS slice to integrate with the JetBrains Rider emulator. To enable this, we have added `RuntimeIdentifier` conditions to the `.csproj` file, which link the emulator as `iossimulator-x64`:
+>
+>  `<RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == 'iossimulator-arm64'">iossimulator-x64</RuntimeIdentifier>`
+>   `<ForceSimulatorX64ArchitectureInIDE>true</ForceSimulatorX64ArchitectureInIDE>`
+>
+> Depending on your development environment, you may need to make additional adjustments to your `.csproj` file to meet your specific goals. Note that this workaround will soon become unnecessary. An upcoming release will include a slice that directly targets the JetBrains Rider emulator for `arm64`, streamlining the setup process.
 
 ## See Also
 * [Apryse Android SDK: DocumentView2](https://sdk.apryse.com/api/xamarinandroid/tools/api/pdftron.PDF.Controls.DocumentView2.html)
