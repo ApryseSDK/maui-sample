@@ -251,9 +251,16 @@ The trial of the Apryse Mobile SDK does not require a trial key. A commercial li
 
 ## Deploy and Run
 
-For the Android platform, either an Android device or an emulator can be used with Visual Studio to build, deploy, and run the project. 
+### Android
 
-For the iOS platform, an iOS device is required, along with a Mac machine paired with Visual Studio and an active Apple developer account to generate a provisioning profile.
+Open the solution in an IDE like [JetBrains Rider](https://www.jetbrains.com/help/rider/MAUI.html#run_debug) or [Microsoft Visual Studio](https://learn.microsoft.com/en-us/dotnet/maui/android/device/setup?view=net-maui-9.0) then build, deploy, and run the project to an Android device or emulator.
+
+### iOS
+
+If using an IDE supported on Mac OS (e.g. [JetBrains Rider](https://www.jetbrains.com/help/rider/MAUI.html#run_debug)), open the solution then build, deploy, and run the project to the Xcode iOS simulator or a connected iOS device.
+
+Otherwise, if the solution is opened on an IDE running on Windows, a Mac machine needs to be paired to the IDE and an active Apple developer account needs to generate a provisioning profile in order to build, deploy, and run the project to an iOS device connected to the Mac machine or remotely to the Xcode iOS simulator.
+
 
 ## See Also
 * [Apryse Android SDK: DocumentView2](https://sdk.apryse.com/api/xamarinandroid/tools/api/pdftron.PDF.Controls.DocumentView2.html)
@@ -266,3 +273,5 @@ For the iOS platform, an iOS device is required, along with a Mac machine paired
 * [.NET MAUI: Set up Android device for debugging](https://learn.microsoft.com/en-us/dotnet/maui/android/device/setup)
 * [.NET MAUI: Android Emulator](https://learn.microsoft.com/en-us/dotnet/maui/android/emulator)
 * [.NET MAUI: Pair to Mac for iOS development](https://learn.microsoft.com/en-us/dotnet/maui/ios/pair-to-mac)
+* [JetBrains Rider: Languages and frameworks: MAUI](https://www.jetbrains.com/help/rider/MAUI.html)
+* [JetBrains Rider: Run and debug MAUI and Xamarin projects on macOS](https://www.jetbrains.com/help/rider/Run_Debug_Configuration_Xamarin_Mac.html)
