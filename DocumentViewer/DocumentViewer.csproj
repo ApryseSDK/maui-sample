@@ -95,7 +95,7 @@
    </ItemGroup>
 
    <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
-     <PackageReference Include="PDFTron.iOS.Tools" Version="11.8.0" />
+     <PackageReference Include="PDFTron.iOS.Tools" Version="11.9.0" />
    </ItemGroup>
 
 </Project>
