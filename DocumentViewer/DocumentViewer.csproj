@@ -88,12 +88,12 @@
       </MauiXaml>
    </ItemGroup>
 
-   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
-     <PackageReference Include="PDFTron.iOS.Tools" Version="12.2.0" />
-   </ItemGroup>
-
    <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
      <PackageReference Include="PDFTron.Android.Tools" Version="12.2.0" />
+   </ItemGroup>
+
+   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
+     <PackageReference Include="PDFTron.iOS.Tools" Version="12.3.0" />
    </ItemGroup>
 
 </Project>
